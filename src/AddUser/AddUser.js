@@ -25,7 +25,16 @@ class AddUser extends Component {
         this.setState({
            bestImpression: event.target.value
         });
-        
+    }
+
+    onClick = () => {
+        alert(`Thank you for joining us, 
+        ${this.state.firstName} ${this.state.lastName}`);
+        this.setState({
+            firstName: '',
+            lastName: '',
+            bestImpression: ''
+         });
     }
     render() {
         let userSees;
@@ -33,18 +42,18 @@ class AddUser extends Component {
             userSees = ''
         }
         else {
-            userSees = `${this.state.firstName} ${this.state.lastName} ${this.state.bestImpression}`
+            userSees = `${this.state.firstName} ${this.state.lastName} 's best impression is ${this.state.bestImpression}`
         }
 
       return (
         <div>
-          <input type="text" placeholder="First Name"  onChange={this.onFirstName} />
-          <input type="text" placeholder="Last Name" onChange={this.onLastName} />
-          <input type="text" placeholder="Best Impression" onChange={this.onImpression} />
-          <p>{userSees}</p>
+            <input type="text" placeholder="First Name"   value = {this.state.firstName} onChange={this.onFirstName} />
+            <input type="text" placeholder="Last Name"  value = {this.state.lastName} onChange={this.onLastName} />
+            <input type="text" placeholder="Best Impression"  value = {this.state.bestImpression} onChange={this.onImpression} />
+            <button onClick={this.onClick}>Join Us!</button>
+            <p>{userSees}</p>
         </div>
       );
     }
   }
-  
   export default AddUser;
