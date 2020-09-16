@@ -10,7 +10,7 @@ learned how to use and implement basic react.js functions and event listeners
 
 ## Screen Shot
 
-![screenshot] (./basic-react-app.png)
+![screenshot](./basic-react-app.png)
 
 ### Prerequisites
 
