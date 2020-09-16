@@ -28,12 +28,20 @@ class AddUser extends Component {
         
     }
     render() {
+        let userSees;
+        if(this.state.bestImpression === ''){
+            userSees = ''
+        }
+        else {
+            userSees = `${this.state.firstName} ${this.state.lastName} ${this.state.bestImpression}`
+        }
+
       return (
         <div>
           <input type="text" placeholder="First Name"  onChange={this.onFirstName} />
           <input type="text" placeholder="Last Name" onChange={this.onLastName} />
           <input type="text" placeholder="Best Impression" onChange={this.onImpression} />
-      <p>{this.state.firstName} {this.state.lastName} {this.state.bestImpression}</p>
+          <p>{userSees}</p>
         </div>
       );
     }
